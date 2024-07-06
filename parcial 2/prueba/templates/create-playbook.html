@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear o Modificar Playbook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear o Modificar Playbook</h1>
+        <div class="segment">
+            <h2>Crear Nuevo Playbook</h2>
+            <label for="playbook-name">Nombre del Playbook Nuevo:</label>
+            <input type="text" id="playbook-name" class="large-input" placeholder="Ingrese el nombre del playbook">
+        </div>
+        <div class="segment">
+            <h2>Seleccionar Playbook para Modificar</h2>
+            <label for="existing-playbooks">Seleccionar Playbook:</label>
+            <select id="existing-playbooks" onchange="loadPlaybookContent()">
+                <option value="">Nuevo Playbook</option>
+                <!-- Las opciones se llenarán dinámicamente -->
+            </select>
+        </div>
+        <form id="create-playbook-form" onsubmit="savePlaybook(event)">
+            <textarea id="playbook-content" class="large-textarea" rows="20" cols="70" placeholder="Escribe tu playbook aquí..."></textarea>
+            <div class="button-container">
+                <button type="submit">Guardar Playbook</button>
+                <button type="button" onclick="window.location.href='/'">Regresar al Inicio</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

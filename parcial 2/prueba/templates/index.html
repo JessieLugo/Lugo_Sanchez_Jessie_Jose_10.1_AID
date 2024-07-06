@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al Ansible de JJ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Ansible de JJ</h1>
+        <h2>¿Qué deseas realizar?</h2>
+        <div class="actions">
+            <select id="playbook-list">
+            </select>
+            <button onclick="startPlaybook()">Iniciar Playbook</button>
+            <button onclick="window.location.href='create-playbook'">Crear Nueva Playbook</button>
+        </div>
+        <div class="host-management">
+            <h3>Agregar Nuevos Hosts</h3>
+            <form id="add-host-form" onsubmit="addHost(event)">
+                <input type="text" id="new-host" placeholder="Nuevo Host">
+                <button type="submit">Agregar Host</button>
+            </form>
+            <h3>Seleccionar Hosts para Aplicar Playbooks</h3>
+            <div id="host-list">
+            </div>
+        </div>
+        <div class="processes">
+            <h3>Procesos en Ejecución</h3>
+            <pre id="process-output"></pre>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+Flask==1.1.2
+Jinja2==2.11.3
+Werkzeug==1.0.1
+Markupsafe==1.1.1
+itsdangerous==1.1.0
+flask-socketio==5.2.0
+python-socketio==5.5.0
+eventlet==0.31.0
+
